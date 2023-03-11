@@ -6,31 +6,35 @@
     </head>
     <body>
         <header>
-            <h2><img src="mylogo.png" alt="'My Logo">Sumedh Wairagade</h2>
-            <p>Following the steps given in the tutorial for the Titanic Dataset.</p>
+            <h1><img src="pic.jpg" class="image" alt="'My Logo">Sumedh Wairagade</h1>
+            <p class="heade">Tutorial for the Titanic Dataset using Decision Tree and Random Forest Classifier.</p>
+            <a href="https://sumedhwairagade.github.io/portfolio/" class="linke">CV</a>
         </header>
         <main>
             <h2><b>Titanic Dataset Prediction Model</b></h2>
-            <p>I have followed the tutorial given by the Kaggle, <a src="https://www.kaggle.com/code/alexisbcook/titanic-tutorial">titanic-tutorial by alexisbcook</a>. Also made changes in the algorithm by changing the number of estimators (Number of trees in the Forest) and the max depth (depth of the tree) attributes of the algorithm. Random Forest Algorithm uses a meta estiamtor which fits the data in given number of base estimator. According to the tutorial our model was predicting the correct values for 370 rows from the test after cleaning the dataset. But if we change the values of the Number of estimators to 192 and the Max depth attribute to 4, we get 397 correct prediction values for the given test set</p>
-            <h3><b>Motivation</b></h3>
-            <p>This was the introduction assignment for our Data Mining class, where we were introduced to various Machine Learning Models and how the different models are used to perfrom various activities. For example, we used Random Forest Classifier with base estimator as Decision Tree Classifier and gave the number of estimators we want to use for our model along with the depth of each estimator.</p>
+            <p class="tex">I have followed the tutorial given by the Kaggle, <a src="https://www.kaggle.com/code/alexisbcook/titanic-tutorial">titanic-tutorial by alexisbcook</a>. Also made changes in the algorithm by changing the number of estimators (Number of trees in the Forest) and the max depth (depth of the tree) attributes of the algorithm. Random Forest Algorithm uses a meta estiamtor which fits the data in given number of base estimator. According to the tutorial our model was predicting the correct values for 370 rows from the test after cleaning the dataset. But if we change the values of the Number of estimators to 192 and the Max depth attribute to 4, we get 397 correct prediction values for the given test set</p>
+            <h3><b>Motivation:</b></h3>
+            <p class="tex">This was the introduction assignment for our Data Mining class, where we were introduced to various Machine Learning Models and how the different models are used to perfrom various activities. For example, we used Random Forest Classifier with base estimator as Decision Tree Classifier and gave the number of estimators we want to use for our model along with the depth of each estimator.</p>
             <h3><b>Initial step:</b></h3>
-            <p>First we take a quick look at our dataset where we check what we are working with and make adjustments to the data if needed. In our case, we had to modify our dataset, our dataset has <i>Has_Cabin</i> attribute which has not integer values which we modified to 0's and 1's. Then we added <i>SibSp</i> attribute and <i>Parch</i> attribute to 1 to make a new attribute <i>FamilySize</i>. Then we checked if the person is travelling alone and made a new flag attribute <i>IsAlone</i> with integer boolean datatype 0 and 1. Then we removed all the null values from the <i>Embarked</i> and filled them with 'S', which represents Southampton. Then we filled all the na values in the <i>Fare</i> column with the median of the values in the Fare column. Removed all the NULL values in the <i>Age</i> column and used the random number generator using mean and the standard deviation of the <i>Age</i> column. Then we also mapped the <i>Sex</i> attribute as 0 for all the females and 1 for all the males. Then finally we dropped some attributes from the table, <i>Name</i>, <i>Ticket</i>, <i>Cabin</i>, <i>SibSp</i>.</p>
+            <p class="tex">First we take a quick look at our dataset where we check what we are working with and make adjustments to the data if needed. In our case, we had to modify our dataset, our dataset has <i>Has_Cabin</i> attribute which has not integer values which we modified to 0's and 1's. Then we added <i>SibSp</i> attribute and <i>Parch</i> attribute to 1 to make a new attribute <i>FamilySize</i>. Then we checked if the person is travelling alone and made a new flag attribute <i>IsAlone</i> with integer boolean datatype 0 and 1. Then we removed all the null values from the <i>Embarked</i> and filled them with 'S', which represents Southampton. Then we filled all the na values in the <i>Fare</i> column with the median of the values in the Fare column. Removed all the NULL values in the <i>Age</i> column and used the random number generator using mean and the standard deviation of the <i>Age</i> column. Then we also mapped the <i>Sex</i> attribute as 0 for all the females and 1 for all the males. Then finally we dropped some attributes from the table, <i>Name</i>, <i>Ticket</i>, <i>Cabin</i>, <i>SibSp</i>.</p>
+            <img src="Datass.png" class="daimg" alt="Dataset_image">
             <h3><b>Second Step:</b></h3>
-            <p>We import Random Forest Classifier as tutorial asks us to and run the algorithm through default settings. Then we adjust the <u><i>number of estimators</i></u> and the <u><i>max depth</i></u> of the estimator such that we could get more correct predictions resulting in higher accuracy. We can check how our algorithm is doing after changing the attributes of the function.</p>
-            <p>I also checked if our Decision Tree Classifier is implementing with the same accuracy as our data size is small. So, we define a function to evaluate gini index in our Decision Tree. Now we import Kfold from sklearn to find the optimum depth of the tree to build better model.</p>
-            <p>We can see that the maximum average accuracy was gained at max depth 3, then it started to decline again. So, we build a tree having max depth 3 and it gave me good results on fiting my data and performing prediction my test Data. I gained accuracy of 82.38% on my test data.</p>
+            <p class="tex">We import Random Forest Classifier as tutorial asks us to and run the algorithm through default settings. Then we adjust the <u><i>number of estimators</i></u> and the <u><i>max depth</i></u> of the estimator such that we could get more correct predictions resulting in higher accuracy. We can check how our algorithm is doing after changing the attributes of the function.</p>
+            <img src="RFC_base.png" class="initrfc" alt="initial_rfc">
+            <img src="RFC_changed.png" class="finrfc" alt="final_rfc">
+            <p class="tex">I also checked if our Decision Tree Classifier is implementing with the same accuracy as our data size is small. So, we define a function to evaluate gini index in our Decision Tree. Now we import Kfold from sklearn to find the optimum depth of the tree to build better model.</p>
+            <img src="depth_checking.png" class="dept" alt="depth_image">
+            <p class="tex">We can see that the maximum average accuracy was gained at max depth 3, then it started to decline again. So, we build a tree having max depth 3 and it gave me good results on fiting my data and performing prediction my test Data. I gained accuracy of 82.38% on my test data.</p>
+            <img src="dt_classifier.png" class="dtcfunc" alt="decisiontreeclassifierfunction">
             <h3><b>Conclusion and Future Scope:</b></h3>
-            <p>I experienced alot during this assignment and got to know how I can tune my model to perform better. Here are some of the images of my model in python-notebook.</p>
-            
+            <p class="tex">I experienced alot during this assignment and got to know how I can tune my model to perform better. Also we made an image using PIL library in python-notebook which we have shown below.</p>
+            <img src="decision_tree.png" class="treeimg" alt="imageoftree">
+            <p class="tex">Try competitions on Kaggle it is good for practicing your skills and keeping uptodate with current technology.</p>
         </main>
-        <div class="footer">
-            <h2>Contact Me</h2>
-            <div>
-                <a href="mailto: sumedhwairagade2gmail.com"><img src="email.png"></a>
-                <a href="https://www.linkedin.com/in/sumedh-wairagade-5b7263151/" target="_blank"><img src="linkedin.png"></a>
-                <a href="https://github.com/SumedhWairagade" target="_blank"><img src="github.png"></a>
-            </div>
-        </div>
+        <footer>
+            <a href="mailto: sumedhwairagade2gmail.com"><img src="email.png"></a>
+            <a href="https://www.linkedin.com/in/sumedh-wairagade-5b7263151/" target="_blank"><img src="linkedin.png"></a>
+            <a href="https://github.com/SumedhWairagade" target="_blank"><img src="github.png"></a>
+        </footer>
     </body>
 </html>
